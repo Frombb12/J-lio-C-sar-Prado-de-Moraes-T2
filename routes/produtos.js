@@ -5,4 +5,4 @@ router.get('/', (req, res) => {
     res.render('produtos'); // Renderiza o arquivo produtos.ejs
   });
 
-module.exports = router;
+export default router;

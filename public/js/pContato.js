@@ -3,7 +3,7 @@ const form = document.getElementById("contatoForm");
 form.addEventListener("submit", async (event) => {
     event.preventDefault();
 
-    const formData = new FormData(form);
+  const formData = new FormData(form);
   const formDataObject = Object.fromEntries(formData.entries());
 
   try {
@@ -12,11 +12,29 @@ form.addEventListener("submit", async (event) => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formDataObject),
     });
-
-    const result = await response.json();
-    console.log(result.message);
-  } catch (error) {
-    console.error("Erro ao enviar formulário:", error);
-    console.log = "Ocorreu um erro. Tente novamente mais tarde.";
+    if (response.status === 201) {
+      const data = await response.json();
+      Swal.fire({
+        title: "Sucesso!",
+        text: `Contato criado com sucesso: ${data.titulo}`,
+        icon: "success",
+        confirmButtonText: "OK",
+      });
+    } else {
+      const error = await response.json();
+      Swal.fire({
+        title: "Erro!",
+        text: `Erro ao criar o contato: ${error.error}`,
+        icon: "error",
+        confirmButtonText: "OK",
+      });
+    }
+  } catch (err) {
+    Swal.fire({
+      title: "Erro!",
+      text: `Erro: ${err.message}`,
+      icon: "error",
+      confirmButtonText: "OK",
+    });
   }
 });

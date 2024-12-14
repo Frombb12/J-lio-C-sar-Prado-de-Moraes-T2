@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-router.get('/login', (req, res) => {
+router.get('/', (req, res) => {
     res.render('login', {
       title: 'Login - One Piece',
     });
@@ -20,4 +20,4 @@ router.get('/login', (req, res) => {
   });
   
 
-module.exports = router;
+export default router;

@@ -1,10 +1,10 @@
-const express = require("express");
+import express from 'express';
 const router = express.Router();
 
 router.get('/', (req, res) => {
-    res.render('index', {
+    res.render('index.ejs', {
       title: 'O que é One Piece?',
     });
   });
 
-module.exports = router;
+  export default router;
