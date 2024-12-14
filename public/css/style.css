@@ -1,0 +1,105 @@
+html, body {
+    height: 100%; /* ocupa 100% do espaço disponível */
+}
+
+
+h1,h4{
+    /* estilização das fontes */
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    text-decoration: underline;
+}
+p{
+    /* estilização dos parágrafos */
+    font-family:Arial;
+    font-size:larger
+}
+.iconNav { 
+    /* estilização referente ao icon presente na navBar */
+    width: 50px; 
+    height: auto;
+    margin: 5px; 
+}
+.container {
+    /* estilização principal de todas as div box que estão dentro da classe container */
+    display: flex;
+    flex-direction: column; 
+    gap: 20px; 
+    align-items: center; 
+    margin-top: 20px;
+}
+.box {
+    /* estilização do tamanho, posição e cor das divs que pertencem a classe box */
+    border: 2px solid #000000;
+    border-radius: 8px;
+    padding: 16px;
+    width: 80%; /* Largura da div */
+    text-align: center;
+    background-color: #474747;
+}
+.box img {
+    /* tamanho e borda das imagens dentro da classe box */
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+
+.sites {
+    /* estilização do tamanho, posição e cor da div */
+    border: 2px solid black; 
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto; 
+    margin-bottom: 20px; 
+    text-align: center; 
+    max-width: 350px; 
+    width: 100%;
+    padding: 20px; 
+    background-color: #474747;
+}
+
+.sites a {
+    /* tags "a" para referencia estilizadas como block dentro das classes "sites" */
+    display: block;
+}
+
+figure {
+    /* centralização das logos */
+    margin: 0; 
+    padding: 0; 
+}
+.iconCliente {
+    width: 50px; 
+    height: auto;
+    margin: 5px; 
+}
+
+.containerForm { 
+    border: 2px solid black; 
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto; 
+    margin-bottom: 20px;   
+    max-width: 1000px; 
+    width: 100%;
+    padding: 20px; 
+    background-color: #474747;
+}
+
+.logo {
+    /* estilização tamanho das logos das marcas */
+    width: 200px; 
+    height: auto;
+    margin: 10px; 
+}
+
+.form-container {
+    /* tamanho do container que contém os inputs para login */
+    max-width: 350px;
+    padding: 1rem;
+}

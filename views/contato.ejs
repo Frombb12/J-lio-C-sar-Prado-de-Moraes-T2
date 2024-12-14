@@ -1,0 +1,97 @@
+
+<%- include ('partials/header.ejs') %>
+    
+
+    <%- include('partials/nav.ejs') %> <!-- Inclui a barra de navegação -->
+
+    <div>
+      <h1 class="mt-5 pt-5">Acesso aos produtos</h1>
+      <br><br><br>
+    </div>
+  
+    <!-- Representantes e Links -->
+    <div class="sites">
+      <h3>Site Panini</h3>
+      <a href="https://panini.com.br/catalogsearch/result/?q=one+piece" target="_blank">
+        <figure>
+          <img class="logo" src="/img/panini.png" alt="logoPanini">
+        </figure>
+      </a>
+    </div>
+  
+    <div class="sites">
+      <h3>Sites Crunchyroll e Netflix</h3>
+      <a href="https://www.crunchyroll.com/pt-br/" target="_blank">
+        <figure>
+          <img class="logo" src="/img/crunchy.png" alt="Logo Crunchyroll">
+        </figure>
+      </a>
+      <a href="https://www.netflix.com/br/" target="_blank">
+        <figure>
+          <img class="logo" src="/img/Netflix.png" alt="logoNetflix">
+        </figure>
+      </a>
+    </div>
+  
+    <div class="sites">
+      <h3>Site para Figures</h3>
+      <a href="https://www.fantoy.com.br/bonecos-colecionaveis/animes-mangas/one-piece.html?" target="_blank">
+        <figure>
+          <img class="logo" src="/img/logo fantoy.png" alt="logoFantoy">
+        </figure>
+      </a>
+    </div>
+  
+    <div class="sites">
+      <h3>Site para Acessórios</h3>
+      <a href="https://lista.mercadolivre.com.br/one-piece#D[A:one%20piece]" target="_blank">
+        <figure>
+          <img class="logo" src="/img/logo-mercado-livre-256.png" alt="logoMercadoLivre">
+        </figure>
+      </a>
+    </div>
+  
+    <br><br><br>
+  
+    <!-- Seção de Auxílio de Busca -->
+    <div>
+      <h1>Auxílio de busca</h1>
+      <p class="text-center">
+        Caso exista a necessidade, podemos notificá-lo quando o produto desejado estiver disponível.
+        Apenas preencha as informações abaixo para que possamos enviar atualizações do mercado.
+      </p>
+    </div>
+  
+    <!-- Formulário de Contato -->
+    <div class="containerForm mt-5">
+      <form method="POST" class="row g-3">
+        <div class="col-md-6">
+          <label for="nome" class="form-label">Nome</label>
+          <input type="text" class="form-control" id="nome" name="Nome" placeholder="Nome completo" required>
+        </div>
+        <div class="col-md-8">
+          <label for="emailAddres" class="form-label">Email</label>
+          <input type="email" class="form-control" id="emailAddres" name="Email" placeholder="exemplo@exemplo.com" required>
+        </div>
+        <div class="col-md-4">
+          <label for="phoneNumber" class="form-label">Telefone</label>
+          <input type="text" class="form-control" id="phoneNumber" name="phoneNumber" placeholder="+55 (19) 97115-9887">
+        </div>
+        <div class="col-md-12">
+          <label for="descricao" class="form-label">Descrição do produto desejado</label>
+          <textarea class="form-control" id="descricao" name="descricao" rows="3" placeholder="Insira aqui a descrição do produto"></textarea>
+        </div>
+        <div class="col-md-12 mt-3">
+          <button type="submit" class="btn btn-primary">Enviar</button>
+        </div>
+      </form>
+    </div>
+
+    <br>
+    <br>
+    <br>
+
+    <%- include ('partials/footerHTML.ejs') %>
+
+
+<%- include ('partials/footerJS.ejs') %>
