@@ -59,31 +59,31 @@ export const obterContatos = async (req, res) => {
 /**
  * Atualiza uma pergunta específica pelo ID.
  */
-export const atualizarPergunta = async (req, res) => {
+export const atualizarContato= async (req, res) => {
   try {
-    const [updated] = await Pergunta.update(req.body, {
+    const [updated] = await Contato.update(req.body, {
       where: { id: req.params.id },
     });
     if (updated) {
-      const pergunta = await Pergunta.findByPk(req.params.id);
-      res.status(200).json(pergunta);
+      const contato = await Contato.findByPk(req.params.id);
+      res.status(200).json(contato);
     } else {
-      res.status(404).json({ error: "Pergunta não encontrada" });
+      res.status(404).json({ error: "Contato não encontrado" });
     }
   } catch (err) {
     res
       .status(500)
-      .json({ error: "Erro ao atualizar pergunta", details: err.message });
+      .json({ error: "Erro ao atualizar o Contato", details: err.message });
   }
 };
 
 /**
  * Deleta uma pergunta específica pelo ID usando SQL puro.
  */
-export const deletarPergunta = async (req, res) => {
+export const deletarContato = async (req, res) => {
   try {
     const [results, metadata] = await sequelize.query(
-      "DELETE FROM Perguntas WHERE id = :id",
+      "DELETE FROM Contatos WHERE id = :id",
       { replacements: { id: req.params.id }, type: sequelize.QueryTypes.DELETE }
     );
     if (metadata.affectedRows > 0) {
@@ -94,6 +94,6 @@ export const deletarPergunta = async (req, res) => {
   } catch (err) {
     res
       .status(500)
-      .json({ error: "Erro ao deletar pergunta", details: err.message });
+      .json({ error: "Erro ao deletar o Contato", details: err.message });
   }
 };

@@ -29,7 +29,7 @@ const Contato = sequelize.define('contato', {
     defaultValue: DataTypes.NOW,
   }
 }, {
-  tableName: 'InfoContato',
+  tableName: 'Contatos',
   timestamps: true,
 });
 

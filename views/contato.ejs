@@ -64,14 +64,14 @@
   
     <!-- Formulário de Contato -->
     <div class="containerForm mt-5">
-      <form method="POST" class="row g-3">
+      <form id="contatoForm" class="row g-3">
         <div class="col-md-6">
           <label for="nome" class="form-label">Nome</label>
-          <input type="text" class="form-control" id="nome" name="Nome" placeholder="Nome completo" required>
+          <input type="text" class="form-control" id="nome" name="Nome" placeholder="Nome completo">
         </div>
         <div class="col-md-8">
           <label for="emailAddres" class="form-label">Email</label>
-          <input type="email" class="form-control" id="emailAddres" name="Email" placeholder="exemplo@exemplo.com" required>
+          <input type="email" class="form-control" id="emailAddres" name="Email" placeholder="exemplo@exemplo.com">
         </div>
         <div class="col-md-4">
           <label for="phoneNumber" class="form-label">Telefone</label>
@@ -82,7 +82,7 @@
           <textarea class="form-control" id="descricao" name="descricao" rows="3" placeholder="Insira aqui a descrição do produto"></textarea>
         </div>
         <div class="col-md-12 mt-3">
-          <button type="submit" class="btn btn-primary">Enviar</button>
+          <button class="btn btn-primary">Enviar</button>
         </div>
       </form>
     </div>
@@ -91,6 +91,8 @@
     <br>
     <br>
 
+<script src="/js/pContato.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <%- include ('partials/footerHTML.ejs') %>
 
 

@@ -6,7 +6,7 @@
         <img src="/img/one piece jolly.png" height="300" width="300" alt="Jolly Roger One Piece"> <!-- Ícone da tela de login -->
         
         <!-- Formulário de Login -->
-        <form id="loginForm" method="POST" action="/login">
+        <form id="loginForm" >
           <h1 class="h3 mb-3 fw-normal">Login</h1>
           
           <!-- Campo de Usuário -->
@@ -17,7 +17,7 @@
               id="login" 
               name="username" 
               placeholder="valorUsuario" 
-              required>
+              >
             <label for="login">Usuário</label>
           </div>
     
@@ -28,17 +28,19 @@
               class="form-control" 
               id="senha" 
               name="password" 
-              placeholder="Senha" 
-              required>
+              placeholder="Senha">
             <label for="senha">Senha</label>
           </div>
     
           <!-- Botão de Login -->
           <div>
-            <button type="submit" class="btn btn-primary w-100 py-2">Logar</button>
+            <button class="btn btn-primary w-100 py-2">Logar</button>
           </div>
         </form>
       </main>
+
+<script src="/js/pLogin.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <%- include ('partials/footerJS.ejs') %>
 

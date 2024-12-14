@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+import { criarLogin } from '../controllers/loginController.js';
 
 router.get('/', (req, res) => {
     res.render('login', {
