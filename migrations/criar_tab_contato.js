@@ -1,6 +1,7 @@
-"use strict";
-module.exports = {
-  async up(queryInterface, Sequelize) {
+import { Sequelize } from 'sequelize';
+
+export default {
+  async up(queryInterface) {
     await queryInterface.createTable("Contatos", {
       id: {
         allowNull: false,
@@ -20,10 +21,6 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      Email: {
-        type: Sequelize.TEXT,
-        allowNull: false,
-      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
@@ -34,7 +31,8 @@ module.exports = {
       },
     });
   },
-  async down(queryInterface, Sequelize) {
+
+  async down(queryInterface) {
     await queryInterface.dropTable("Contatos");
   },
 };

@@ -89,7 +89,7 @@ export const deletarContato = async (req, res) => {
     if (metadata.affectedRows > 0) {
       res.status(204).send();
     } else {
-      res.status(404).json({ error: "Pergunta não encontrada" });
+      res.status(404).json({ error: "Contato não encontrado" });
     }
   } catch (err) {
     res

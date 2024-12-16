@@ -1,11 +1,11 @@
 import bodyParser from "body-parser";
 import express from "express";
 import homeRoutes from "./routes/home.js";
-import perguntaRoutes from "./routes/pergunta.js";
+import contatoRoutes from "./routes/contato.js";
+import loginRoutes from "./routes/login.js";
+import produtosRoutes from "./routes/produtos.js"; 
 import sequelize from "./config/database.js";
 
-const express = require("express");
-const bodyParser = require("body-parser"); 
 const app = express();
 
 app.set("view engine", "ejs");
@@ -24,17 +24,19 @@ app.use("/contato", contatoRoutes);
 app.use("/login", loginRoutes);
 app.use("/produtos", produtosRoutes);
 
-	const PORT = process.env.PORT || 4000;
-	const startServer = async () => {
-		try {
-		await sequelize.authenticate();
-		console.log("Conexão com o banco de dados foi estabelecida com sucesso.");
-		app.listen(PORT, () => {
-			console.log(`Servidor rodando na porta ${PORT}`);
-		});
-		} catch (err) {
-			console.error("Não foi possível conectar ao banco de dados:", err);
-		}
-	};
+const PORT = process.env.PORT || 4000;
+
+const startServer = async () => {
+	try {
+	await sequelize.authenticate();
+	console.log("Conexão com o banco de dados foi estabelecida com sucesso.");
+	app.listen(PORT, () => {
+		console.log(`Servidor rodando na porta ${PORT}`);
+	});
+	} catch (err) {
+		console.error("Não foi possível conectar ao banco de dados:", err);
+	}
+};
+
 startServer();
 		
