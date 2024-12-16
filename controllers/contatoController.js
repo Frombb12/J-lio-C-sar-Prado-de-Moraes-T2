@@ -14,12 +14,14 @@ export const criarContato = async (req, res) => {
       res.status(500).json({ error: "Erro de conexão com o banco de dados" });
     } else if (err.name === "SequelizeValidationError") {
       // Erro de validação
-      res.status(400).json({ error: "Erro de validação", details: err.errors });
+      // Agora, "err.errors" contém o array com os erros de validação
+      res.status(400).json({
+        error: "Erro de validação",
+        details: err.errors.map((e) => e.message), // mapeia os detalhes corretamente
+      });
     } else {
       // Outros erros
-      res
-        .status(500)
-        .json({ error: "Erro ao criar pergunta", details: err.message });
+      res.status(500).json({ error: "Erro ao criar contato", details: err.message });
     }
   }
 };

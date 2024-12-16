@@ -9,16 +9,20 @@ export default {
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      Nome: {
+      nome: {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      Email: {
+      email: {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      Fone: {
+      fone: {
         type: Sequelize.STRING,
+        allowNull: false,
+      },
+      descricao:{
+        type: Sequelize.TEXT,
         allowNull: false,
       },
       createdAt: {
