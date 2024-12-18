@@ -1,0 +1,32 @@
+<%- include('partials/Header.ejs') %>
+<%- include('partials/nav.ejs') %> <!-- Inclui a barra de navegação -->
+<body class="d-flex align-items-center py-4 bg-body-tertiary ">
+<main class="w-100 m-auto form-container text-center">
+  <h1 class="h3 mb-3 fw-normal">Cadastro de Novo Usuário</h1>
+  
+  <!-- Formulário de Cadastro -->
+  <div class = containerCadastro>
+  <form id="cadastrarForm">
+    <div class="form-floating mb-3">
+      <input type="text" class="form-control" id="usuario" name="usuario" placeholder="Nome de Usuário" required>
+      <label for="usuario">Nome de Usuário</label>
+    </div>
+
+    <div class="form-floating mb-3">
+      <input type="password" class="form-control" id="senha" name="senha" placeholder="Senha" required>
+      <label for="senha">Senha</label>
+    </div>
+
+    <div class="form-floating mb-3">
+      <input type="password" class="form-control" id="confirmSenha" name="confirmSenha" placeholder="Confirme a Senha" required>
+      <label for="confirmSenha">Confirme a Senha</label>
+    </div>
+
+    <button type="submit" class="btn btn-primary w-100 py-2">Cadastrar</button>
+  </form>
+  </div>
+</main>
+<script src="/js/pCadastrar.js"></script>
+<script src="/js/pLogin.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<%- include('partials/footerJS.ejs') %>

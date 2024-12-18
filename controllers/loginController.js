@@ -25,3 +25,26 @@ export const obterLogin = async (req, res) => {
     res.status(500).json({ error: "Erro no servidor", details: err.message });
   }
 };
+
+export const cadastrarUsuario = async (req, res) => {
+  const { usuario, senha, confirmSenha } = req.body;
+
+  try {
+    if (senha !== confirmSenha) {
+      return res.status(400).json({ error: "As senhas não coincidem." });
+    }
+
+    // Verificar se o usuário já existe
+    const usuarioExistente = await Login.findOne({ where: { usuario } });
+    if (usuarioExistente) {
+      return res.status(400).json({ error: "Usuário já existe." });
+    }
+
+    // Criar o novo usuário
+    const novoUsuario = await Login.create({ usuario, senha });
+
+    res.status(201).json({ message: "Usuário criado com sucesso", user: novoUsuario });
+  } catch (err) {
+    res.status(500).json({ error: "Erro ao cadastrar usuário", details: err.message });
+  }
+};

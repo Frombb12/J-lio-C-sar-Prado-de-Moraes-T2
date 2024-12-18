@@ -4,6 +4,7 @@ import homeRoutes from "./routes/home.js";
 import contatoRoutes from "./routes/contato.js";
 import loginRoutes from "./routes/login.js";
 import produtosRoutes from "./routes/produtos.js"; 
+import cadastrarRoutes from "./routes/cadastrar.js"
 import sequelize from "./config/database.js";
 
 const app = express();
@@ -24,8 +25,10 @@ app.use("/", homeRoutes);
 app.use("/contato", contatoRoutes);
 app.use("/login", loginRoutes);
 app.use("/produtos", produtosRoutes);
+app.use("/cadastro", cadastrarRoutes)
 
 app.use(loginRoutes)
+app.use(cadastrarRoutes)
 
 const PORT = process.env.PORT || 4000;
 

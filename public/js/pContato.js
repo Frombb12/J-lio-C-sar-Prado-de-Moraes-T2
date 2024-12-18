@@ -5,19 +5,17 @@ form.addEventListener("submit", async (event) => {
 
   const formData = new FormData(form);
   const formDataObject = Object.fromEntries(formData.entries());
-  console.log(formDataObject);
   try {
     const response = await fetch("/contato/salvarContato", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formDataObject),
     });
-    
     if (response.status === 201) {
       const data = await response.json();
       Swal.fire({
         title: "Sucesso!",
-        text: `Contato criado com sucesso:`,
+        text: `Contato criado com sucesso: Em breve entraremos em contato!`,
         icon: "success",
         confirmButtonText: "OK",
       });
