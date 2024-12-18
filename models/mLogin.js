@@ -1,7 +1,7 @@
 import { DataTypes } from 'sequelize';
 import sequelize from '../config/database.js';
 
-const Login = sequelize.define('login', {
+const Login = sequelize.define('login', { // arquivo para sincronizar os dados inseridos no sistema para o banco de dados
   usuario: {
     type: DataTypes.STRING,
     allowNull: false,

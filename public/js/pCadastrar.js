@@ -4,22 +4,21 @@ cadastrarForm.addEventListener("submit", async (event) => {
   event.preventDefault();
 
   const formData = new FormData(cadastrarForm);
-  const cadastrarData = Object.fromEntries(formData.entries());
+  const cadastrarData = Object.fromEntries(formData.entries()); // recebe as informações inseridas no forms
 
   try {
-    const response = await fetch("/cadastrar", {
+    const response = await fetch("/cadastrar", { // converte para json
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(cadastrarData),
+      body: JSON.stringify(cadastrarData), 
     });
 
     const result = await response.json();
 
     if (response.status === 201) {
-      // Sucesso no cadastro
-      Swal.fire({
+      Swal.fire({ // exibição de sucesso do cadastro na tela
         title: "Sucesso!",
         text: "Usuário cadastrado com sucesso!",
         icon: "success",
@@ -36,7 +35,7 @@ cadastrarForm.addEventListener("submit", async (event) => {
       });
     }
   } catch (err) {
-    Swal.fire({
+    Swal.fire({ //exibição do erro do cadastro na tela
       title: "Erro!",
       text: `Erro: ${err.message}`,
       icon: "error",

@@ -2,7 +2,7 @@ import { Sequelize } from 'sequelize';
 
 export default {
   async up(queryInterface) {
-    await queryInterface.createTable("Login", {
+    await queryInterface.createTable("Login", { // criar tabela com suas respectivas colunas abaixo.
       id: {
         allowNull: false,
         autoIncrement: true,

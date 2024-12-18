@@ -1,5 +1,5 @@
 export default {
-  async up(queryInterface) {
+  async up(queryInterface) { // adição direta de um usuário no banco de dados para testes iniciais
     await queryInterface.bulkInsert("Login", [
       {
         usuario: "admin",
