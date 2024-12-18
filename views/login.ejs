@@ -1,6 +1,8 @@
 
 <%- include ('partials/Header.ejs') %>
 
+<%- include ('partials/nav.ejs') %>
+
 <body class="d-flex align-items-center py-4 bg-body-tertiary "> 
     <main class="w-100 m-auto form-container text-center">
         <img src="/img/one piece jolly.png" height="300" width="300" alt="Jolly Roger One Piece"> <!-- Ícone da tela de login -->
@@ -15,7 +17,7 @@
               type="text" 
               class="form-control" 
               id="login" 
-              name="username" 
+              name="usuario" 
               placeholder="valorUsuario" 
               >
             <label for="login">Usuário</label>
@@ -27,7 +29,7 @@
               type="password" 
               class="form-control" 
               id="senha" 
-              name="password" 
+              name="senha" 
               placeholder="Senha">
             <label for="senha">Senha</label>
           </div>

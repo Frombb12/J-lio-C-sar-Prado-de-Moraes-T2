@@ -17,10 +17,11 @@ form.addEventListener("submit", async (event) => {
       const data = await response.json();
       Swal.fire({
         title: "Sucesso!",
-        text: `Contato criado com sucesso: ${data.message}`,
+        text: `Contato criado com sucesso:`,
         icon: "success",
         confirmButtonText: "OK",
       });
+      form.reset();
     } else {
       const error = await response.json();
       // Verificando se "details" é um array e tratando adequadamente

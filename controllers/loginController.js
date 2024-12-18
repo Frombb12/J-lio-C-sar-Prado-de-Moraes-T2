@@ -1,18 +1,27 @@
 import Login from "../models/mLogin.js";
-import sequelize from "../config/database.js"; // Adicionar a importação para sequelize
 
-
+// Controlador para realizar o login com dados do banco
 export const obterLogin = async (req, res) => {
+  const { usuario, senha } = req.body; // Pega os dados enviados pelo frontend
+
   try {
-    const login = await Login.findByPk(req.params.id);
-    if (login) {
-      res.status(200).json(login);
+    // Busca o usuário no banco que tenha o mesmo 'usuario' e 'senha'
+    const user = await Login.findOne({
+      where: { usuario, senha },
+    });
+
+    console.log("Usuário encontrado:", user);
+
+    if (user) {
+      // Usuário encontrado: login bem-sucedido
+      res.status(200).json({ message: "Login realizado com sucesso!", user: user.usuario });
     } else {
-      res.status(404).json({ error: "Login não encontrado" });
+      // Caso não encontre o usuário
+      res.status(401).json({ error: "Usuário ou senha inválidos" });
     }
   } catch (err) {
-    res
-      .status(500)
-      .json({ error: "Erro ao obter o Login", details: err.message });
+    // Erro interno
+    console.error("Erro ao realizar login:", err);
+    res.status(500).json({ error: "Erro no servidor", details: err.message });
   }
 };
